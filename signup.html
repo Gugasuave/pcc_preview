@@ -1,0 +1,373 @@
+{% load static %}
+{% load bootstrap4 %}
+
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Égide </title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="One page parallax responsive HTML Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Bingo HTML Template v1.0">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'forumapp/images/favicon.png' %}" />
+
+  <!-- CSS
+  ================================================== -->
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="{% static 'forumapp/plugins/themefisher-font/style.css' %} ">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="{% static 'forumapp/plugins/bootstrap/bootstrap.min.css' %} ">
+  <!-- Lightbox.min css -->
+  <link rel="stylesheet" href="{% static 'forumapp/plugins/lightbox2/css/lightbox.min.css' %} ">
+  <!-- animation css -->
+  <link rel="stylesheet" href="{% static 'forumapp/plugins/animate/animate.css' %} ">
+  <!-- Slick Carousel -->
+  <link rel="stylesheet" href="{% static 'forumapp/plugins/slick/slick.css' %} ">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{% static 'forumapp/css/style3.css' %} ">
+
+</head>
+<body id="body">
+
+  <!--
+  Start Preloader
+  ==================================== -->
+  <div id="preloader">
+    <div class='preloader'>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <!--
+  End Preloader
+  ==================================== -->
+
+<!--
+Fixed Navigation
+==================================== -->
+<header class="navigation fixed-top">
+  <div class="container">
+    <!-- main nav -->
+    <nav class="navbar navbar-expand-lg navbar-light px-0">
+      <!-- logo -->
+      <a class="navbar-brand logo" href="{% url 'index' %}">
+        <img loading="lazy" class="logo-default" src="{% static 'forumapp/images/egide.png' %} " alt="logo" />
+        <img loading="lazy" class="logo-white" src="{% static 'forumapp/images/egide_branco.png' %} " alt="logo" />
+      </a>
+      <!-- /logo -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="navbar-nav ml-auto text-center">
+          <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Inicio <i class="tf-ion-chevron-down"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="{% url 'index' %}">Pagina Home</a></li>
+            </ul>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'forum2' %}">Discussões</a>
+
+          </li>
+          </li>
+          </li>
+          <li class="nav-item ">
+            {% if user.is_authenticated %}
+                <a
+                    class="nav-link"
+                    href="{% url 'logout' %}"
+                >
+                    <span class="fa fa-sign-out"></span>
+                    Logout</a>
+                {% else %}
+                <a
+                    class="nav-link"
+                    href="{% url 'login' %}"
+                >
+                    <span class="fa fa-sign-in"></span>
+                    Login</a>
+                {% endif %}
+          </li>
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a
+                    class="nav-link"
+                    href="{% url 'user-view' user.pk %}"
+                >Logado como {{ user }}
+                </a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a
+                    class="nav-link"
+                    href="{% url 'signup' %}"
+                >
+                    <span class="fa fa-user-plus"></span>
+                    Cadastrar-se
+                </a>
+            </li>
+            {% endif %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Links Uteis <i class="tf-ion-chevron-down"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="https://abeps.org.br/">Abeps</a></li>
+                <li><a class="dropdown-item" href="https://befrienders.org/foreign-language/members/portugese/">Befrienders</a></li>
+                <li><a class="dropdown-item" href="https://sage.saude.gov.br/paineis/planoCrack/lista_caps.php?output=html&">Caps</a></li>
+                <li><a class="dropdown-item" href="https://www.psymeetsocial.com/">PsyMeet</a></li>
+                <li><a class="dropdown-item" href="https://www.setembroamarelo.org.br/">Setembro Aamarelo</a></li>
+                <li><a class="dropdown-item" href="https://vitaalere.com.br/sobre-o-suicidio/posvencao/grupo-de-sobreviventes/">Vita Alere</a></li>
+
+                <li class="dropdown dropdown-submenu dropright">
+                  <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0501" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mais..  <i class="tf-ion-chevron-down"></i></a>
+        
+                  <ul class="dropdown-menu" aria-labelledby="dropdown0501">
+                    <li><a class="dropdown-item" href="index.html">Submenu 01</a></li>
+                    <li><a class="dropdown-item" href="index.html">Submenu 02</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="{% url 'perguntas' %}">Perguntas Frequentes</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- /main nav -->
+  </div>
+</header>
+
+<section class="call-to-action-5 section">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="text-center">
+				<h2 class="shadowed-text">CADASTRE-SE E SE JUNTE A NÓS!</h2>
+				<p class="shadowed-text">Estamos aqui para ouvir, apoiar e responder as suas dúvidas e preocupações sobre saúde mental. Se você está passando por momentos difíceis, precisa de conselhos ou simplesmente deseja compartilhar suas experiências, os profissionais da plataforma para ajudar. Não deixe suas preocupações acumularem, estamos aqui para oferecer um espaço seguro e acolhedor.
+          Junte-se a nós no fórum e vamos caminhar juntos em direção a um bem-estar mental melhor. Sua voz importa, e estamos prontos para ouvir.</p>
+          <div class="container">
+            <div class="row justify-content-center shadowed-text">
+              <div class="text-center">
+                <h2>Cadastro</h2>
+<form method="post" lang="en">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input value="Sign up" id='submit' class="btn btn-success" type="submit"/>
+</form>
+
+
+
+<script>
+    var username_correct = null;
+    var password_correct = null;
+
+    $('#id_username').change(function() {
+
+        $.ajax({
+            url: "{% url 'validate-username' %}",
+            data: {
+                'username': $('#id_username').val()
+            },
+            dataType: 'json',
+            success: function(data) {
+                if(data.is_taken) {
+                    $('#id_username').removeClass('is-valid');
+                    $('#id_username').addClass('is-invalid');
+                    username_correct = false;
+                } else {
+                    $('#id_username').removeClass('is-invalid');
+                    $('#id_username').addClass('is-valid');
+                    username_correct = true;
+                }
+                username_and_password_correct();
+            }
+        });
+
+    });
+
+    $('#id_password1, #id_password2').keyup(function() {
+        password_correct = $('#id_password1').val() == $('#id_password2').val();
+        if(password_correct) {
+            $('#id_password1, #id_password2').removeClass('is-invalid');
+            $('#id_password1, #id_password2').addClass('is-valid');
+        } else {
+            $('#id_password1, #id_password2').removeClass('is-valid');
+            $('#id_password1, #id_password2').addClass('is-invalid');
+        }
+        username_and_password_correct();
+    });
+
+    function username_and_password_correct() {
+        if(username_correct && password_correct) {
+            $("#submit").prop('disabled', false);
+        } else {
+            $("#submit").prop('disabled', true);
+        }
+    }
+</script>
+
+
+              </div>
+            </div> <!-- End row -->
+          </div> <!-- End container -->
+			</div>
+		</div> <!-- End row -->
+	</div> <!-- End container -->
+</section> <!-- End section -->
+
+
+
+<footer id="footer" class="bg-one">
+  <div class="top-footer">
+    <div class="container">
+      <div class="row justify-content-around">
+        <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+          <h3>Sobre</h3>
+          <p>Integer posuere erat a ante venenati dapibus posuere velit aliquet. Fusce dapibus, tellus cursus commodo, tortor mauris sed posuere.</p>
+        </div>
+        <!-- End of .col-sm-3 -->
+
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <ul>
+            <li>
+              <h3>Serviços</h3>
+            </li>
+            <li><a href="service.html">Ui/Ux Design</a></li>
+            <li><a href="service.html">Graphic Design</a></li>
+            <li><a href="service.html">Web Design</a></li>
+            <li><a href="service.html">Web Development</a></li>
+          </ul>
+        </div>
+        <!-- End of .col-sm-3 -->
+
+        <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
+          <ul>
+            <li>
+              <h3>Links uteis</h3>
+            </li>
+            <li><a href="https://abeps.org.br/">Abeps</a></li>
+            <li><a href="https://befrienders.org/foreign-language/members/portugese/">Befrienders</a></li>
+            <li><a href="https://sage.saude.gov.br/paineis/planoCrack/lista_caps.php?output=html&">Caps</a></li>
+            <li><a href="https://www.psymeetsocial.com/">PsyMeet</a></li>
+            <li><a href="https://www.setembroamarelo.org.br/">Setembro Aamarelo</a></li>
+            <li><a href="https://vitaalere.com.br/sobre-o-suicidio/posvencao/grupo-de-sobreviventes/">Vita Alere</a></li>
+          </ul>
+        </div>
+        <!-- End of .col-sm-3 -->
+
+        <div class="col-lg-3 col-md-6">
+          <ul>
+            <li>
+              <h3>Contate nossas redes socaiis</h3>
+            </li>
+            <li><a href="https://www.facebook.com/themefisher/">Facebook</a></li>
+            <li><a href="https://www.twitter.com/themefisher/">Twitter</a></li>
+            <li><a href="https://www.youtube.com/channel/UCx9qVW8VF0LmTi4OF2F8YdA">Youtube</a></li>
+            <li><a href="https://www.github.com/themefisher/">Github</a></li>
+          </ul>
+        </div>
+        <!-- End of .col-sm-3 -->
+
+      </div>
+    </div> <!-- end container -->
+  </div>
+  <div class="footer-bottom">
+    <h5>&copy; Copyright 2020. All rights reserved.</h5>
+    <h6>Design and Developed by <a href="https://themefisher.com/">Themefisher</a></h6>
+  </div>
+</footer> <!-- end footer -->
+
+
+<!-- Main jQuery -->
+<script src="{% static 'forumapp/plugins/jquery/jquery.min.js' %} "></script>
+
+<!-- Bootstrap4 -->
+<script src="{% static 'forumapp/plugins/bootstrap/bootstrap.min.js' %} "></script>
+<!-- Parallax -->
+<script src="{% static 'forumapp/plugins/parallax/jquery.parallax-1.1.3.js' %} "></script>
+<!-- lightbox -->
+<script src="{% static 'forumapp/plugins/lightbox2/js/lightbox.min.js' %} "></script>
+<!-- Owl Carousel -->
+<script src="{% static 'forumapp/plugins/slick/slick.min.js' %} "></script>
+<!-- filter -->
+<script src="{% static 'forumapp/plugins/filterizr/jquery.filterizr.min.js' %} "></script>
+<!-- Smooth Scroll js -->
+<script src="{% static 'forumapp/plugins/smooth-scroll/smooth-scroll.min.js' %} "></script>
+<!-- Google Map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"></script>
+<script src="{% static 'forumapp/plugins/google-map/gmap.js' %} "></script>
+
+<!-- Custom js -->
+<script src="{% static 'forumapp/js/script.js' %} "></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var blogLink = document.getElementById("blog-link");
+    var blogSection = document.getElementById("blog");
+
+    blogLink.addEventListener("click", function(event) {
+      event.preventDefault();
+      blogSection.scrollIntoView({ behavior: "smooth" });
+    });
+  });
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

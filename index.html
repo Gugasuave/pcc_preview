@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Égide </title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="One page parallax responsive HTML Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Bingo HTML Template v1.0">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="forumapp/images/favicon.png" />
+
+  <!-- CSS
+  ================================================== -->
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="forumapp/plugins/themefisher-font/style.css">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="forumapp/plugins/bootstrap/bootstrap.min.css">
+  <!-- Lightbox.min css -->
+  <link rel="stylesheet" href="forumapp/plugins/lightbox2/css/lightbox.min.css">
+  <!-- animation css -->
+  <link rel="stylesheet" href="forumapp/plugins/animate/animate.css">
+  <!-- Slick Carousel -->
+  <link rel="stylesheet" href="forumapp/plugins/slick/slick.css">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="forumapp/css/style3.css">
+
+</head>
+<body id="body">
+
+  <!--
+  Start Preloader
+  ==================================== -->
+  <div id="preloader">
+    <div class='preloader'>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <!--
+  End Preloader
+  ==================================== -->
+
+<!--
+Fixed Navigation
+==================================== -->
+<header class="navigation fixed-top">
+  <div class="container">
+    <!-- main nav -->
+    <nav class="navbar navbar-expand-lg navbar-light px-0">
+      <!-- logo -->
+      <a class="navbar-brand logo" href="index.html">
+        <img loading="lazy" class="logo-default" src="forumapp/images/egide.png" alt="logo" />
+        <img loading="lazy" class="logo-white" src="forumapp/images/egide_branco.png" alt="logo" />
+      </a>
+      <!-- /logo -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="navbar-nav ml-auto text-center">
+          <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Inicio <i class="tf-ion-chevron-down"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="index.html">Pagina Home</a></li>
+            </ul>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="forum2.html">Discussões</a>
+          <li class="nav-item ">
+            <a id="blog-link" class="nav-link" href="portfolio.html">Blog</a>
+
+          </li>
+          </li>
+          </li>
+          <li class="nav-item ">
+            {% if user.is_authenticated %}
+                <a
+                    class="nav-link"
+                    href="logged_out.html"
+                >
+                    <span class="fa fa-sign-out"></span>
+                    Logout</a>
+                {% else %}
+                <a
+                    class="nav-link"
+                    href="login.html"
+                >
+                    <span class="fa fa-sign-in"></span>
+                    Login</a>
+                {% endif %}
+          </li>
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a
+                    class="nav-link"
+                    href="user_view.html"
+                >Logado como {{ user }}
+                </a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a
+                    class="nav-link"
+                    href="signup.html"
+                >
+                    <span class="fa fa-user-plus"></span>
+                    Cadastrar-se
+                </a>
+            </li>
+            {% endif %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Links Uteis <i class="tf-ion-chevron-down"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="https://abeps.org.br/">Abeps</a></li>
+                <li><a class="dropdown-item" href="https://befrienders.org/foreign-language/members/portugese/">Befrienders</a></li>
+                <li><a class="dropdown-item" href="https://sage.saude.gov.br/paineis/planoCrack/lista_caps.php?output=html&">Caps</a></li>
+                <li><a class="dropdown-item" href="https://www.psymeetsocial.com/">PsyMeet</a></li>
+                <li><a class="dropdown-item" href="https://www.setembroamarelo.org.br/">Setembro Aamarelo</a></li>
+                <li><a class="dropdown-item" href="https://vitaalere.com.br/sobre-o-suicidio/posvencao/grupo-de-sobreviventes/">Vita Alere</a></li>
+
+                <li class="dropdown dropdown-submenu dropright">
+                  <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0501" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mais..  <i class="tf-ion-chevron-down"></i></a>
+        
+                  <ul class="dropdown-menu" aria-labelledby="dropdown0501">
+                    <li><a class="dropdown-item" href="index.html">Submenu 01</a></li>
+                    <li><a class="dropdown-item" href="index.html">Submenu 02</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="perguntas_frequentes.html">Perguntas Frequentes</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- /main nav -->
+  </div>
+</header>
+
+<!--
+End Fixed Navigation
+==================================== -->
+
+ <!--
+Welcome Slider
+==================================== -->
+
+ <section class="hero-area">
+ 	<div class="container">
+ 		<div class="row">
+ 			<div class="col-md-12">
+ 				<div class="block mt-4">
+ 					<h1 class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".3s">PCC <br> Primeira versão</h1>
+ 					<p class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".5s">O Égide é um sistema web interativo de grupos de ajuda destinado aos estudantes com transtornos mentais. Aqui você encontrará informações, apoio e orientação em relação à saúde emocional e ao bem-estar psicológico.
+            O sistema apresenta voluntários, incluindo psicólogos e terapeutas comprometidos em instruir o discente ao equilíbrio emocional. Junte-se a nós em uma jornada de bem-estar mental. Juntos, vamos promover uma vida mais saudável e feliz, onde a saúde mental seja uma prioridade para todos.
+ 					</p>
+ 					<ul class="list-inline wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".7s">
+ 						<li class="list-inline-item">
+ 							<a data-scroll href="signup.html" class="btn btn-main">Cadastro</a>
+ 						</li>
+ 						<li class="list-inline-item">
+ 							<a data-scroll href="login.html" class="btn btn-transparent">Login</a>
+ 						</li>
+ 					</ul>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+ </section>
+<!--
+Start Call To Action
+==================================== -->
+{% block join %}
+<section class="call-to-action section">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-xl-6 col-lg-8 text-center">
+				<h2 class="shadowed-text">Junte-se à Comunidade de Apoio: Explore e Converse em Nosso Fórum!</h2>
+				<p class="shadowed-text">Estamos aqui para ouvir, apoiar e responder as suas dúvidas e preocupações sobre saúde mental. Se você está passando por momentos difíceis, precisa de conselhos ou simplesmente deseja compartilhar suas experiências, os profissionais da plataforma para ajudar. Não deixe suas preocupações acumularem, estamos aqui para oferecer um espaço seguro e acolhedor.
+          Junte-se a nós no fórum e vamos caminhar juntos em direção a um bem-estar mental melhor. Sua voz importa, e estamos prontos para ouvir.</p>
+				<a href="forum2.html" class="btn btn-main">Forum</a>
+			</div>
+		</div> <!-- End row -->
+	</div> <!-- End container -->
+</section> <!-- End section -->
+{% endblock %}
+
+<!--
+Start About Section
+==================================== -->
+<section class="about-2 section" id="about">
+	<div class="container">
+		<div class="row justify-content-center">
+			<!-- section title -->
+			<div class="col-lg-6">
+				<div class="title text-center">
+					<h2>Seja voluntario</h2>
+					<p>Você já pensou em se tornar um voluntário? Imagine o impacto positivo que você pode causar na vida de outras pessoas simplesmente dedicando um pouco do seu tempo e talento para ajudá-las.
+            Ser voluntário é uma oportunidade única de fazer a diferença, tanto para aqueles que você ajuda quanto para si mesmo.
+          </p>
+					<div class="border"></div>
+				</div>
+			</div>
+			<!-- /section title -->
+		</div>
+
+		<div class="row">
+
+			<div class="col-md-6 mb-4 mb-md-0">
+				<img loading="lazy" src="forumapp/images/about/cavalario.jpg" class="img-fluid" alt="">
+			</div>
+			<div class="col-md-6">
+				<ul class="checklist">
+					<li>Caso seja um profissional de psicologia ou atua na área da saúde mental e tem o desejo de oferecer ajuda às pessoas, considere tornar-se um voluntário do Égide.</li>
+					<li>As principais áreas de atuação são o apoio emocional, que envolve  a participação na comunidade por meio do fórum.</li>
+					<li>Se você deseja se cadastrar, clique aqui para fazer a sua inscrição.</li>
+				</ul>
+				<a href="signup.html" class="btn btn-main mt-20">Torne-se voluntario</a>
+			</div>
+		</div> <!-- End row -->
+	</div> <!-- End container -->
+</section> <!-- End section -->
+
+
+<!--
+Start Counter Section
+==================================== -->
+<section class="counter-wrapper section-sm">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-xl-6 col-lg-8 text-center">
+				<div class="title">
+					<h2>Como você está se sentindo hoje?</h2>
+					<p>Queremos conhecer suas emoções e estado de espírito! 
+            Escolha o emoticon que melhor representa seu humor no momento e compartilhe conosco</p>
+          <p>😃😐😴😨😭😡😯🥰😎
+          </p>
+          <p>A SER TRABALHADO</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<!-- first count item -->
+			<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
+				<div class="counters-item">
+					<i class="tf-ion-ios-alarm-outline"></i>
+					<div>
+						<span class="counter" data-count="150">0</span>
+					</div>
+					<h3>Usuarios Felizes</h3>
+				</div>
+			</div>
+			<!-- end first count item -->
+
+			<!-- second count item -->
+			<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
+				<div class="counters-item">
+					<i class="tf-ion-ios-analytics-outline"></i>
+					<div>
+						<span class="counter" data-count="130">0</span>
+					</div>
+					<h3>Quantidade de Discussões</h3>
+				</div>
+			</div>
+			<!-- end second count item -->
+
+			<!-- third count item -->
+			<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
+				<div class="counters-item">
+					<i class="tf-ion-ios-compose-outline"></i>
+					<div>
+						<span class="counter" data-count= {{ threads_count }} >0</span>
+					</div>
+					<h3>Quantidade de topicos</h3>
+
+				</div>
+			</div>
+			<!-- end third count item -->
+
+			<!-- fourth count item -->
+			<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
+				<div class="counters-item kill-border">
+					<i class="tf-ion-ios-bolt-outline"></i>
+					<div>
+						<span class="counter" data-count="250">0</span>
+					</div>
+					<h3>Teste</h3>
+				</div>
+			</div>
+			<!-- end fourth count item -->
+		</div> <!-- end row -->
+	</div> <!-- end container -->
+</section> <!-- end section -->
+
+<!-- Start Testimonial
+=========================================== -->
+		
+
+<!--
+Start Blog Section
+=========================================== -->
+<section class="blog" id="blog">
+	<div class="container">
+		<div class="row justify-content-center">
+			<!-- section title -->
+			<div class="col-xl-6 col-lg-8">
+				<div class="title text-center ">
+					<h2> Conferir <span class="color">Blogs</span></h2>
+					<div class="border"></div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus facere accusamus, reprehenderit libero inventore nam.</p>
+				</div>
+			</div>
+			<!-- /section title -->
+		</div>
+
+		<div class="row">
+			<!-- single blog post -->
+			<article class="col-lg-4 col-md-6">
+				<div class="post-item">
+					<div class="media-wrapper">
+						<img loading="lazy" src="forumapp/images/blog/post-1.jpg" alt="amazing caves coverimage" class="img-fluid">
+					</div>
+
+					<div class="content">
+						<h3><a href="single-post.html">Motivos para sorrir</a></h3>
+						<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+							moon officia aute, non skateboard dolor brunch.</p>
+						<a class="btn btn-main" href="single-post.html">Leia mais</a>
+					</div>
+				</div>
+			</article>
+			<!-- /single blog post -->
+
+			<!-- single blog post -->
+			<article class="col-lg-4 col-md-6">
+				<div class="post-item">
+					<div class="media-wrapper">
+						<img loading="lazy" src="forumapp/images/blog/post-2.jpg" alt="amazing caves coverimage" class="img-fluid">
+					</div>
+
+					<div class="content">
+						<h3><a href="single-post.html">Alguns momentos</a></h3>
+						<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+							moon officia aute, non skateboard dolor brunch.</p>
+						<a class="btn btn-main" href="single-post.html">Leia mais</a>
+					</div>
+				</div>
+			</article>
+			<!-- end single blog post -->
+
+			<!-- single blog post -->
+			<article class="col-lg-4 col-md-6">
+				<div class="post-item">
+					<div class="media-wrapper">
+						<img loading="lazy" src="forumapp/images/blog/post-3.jpg" alt="amazing caves coverimage" class="img-fluid">
+					</div>
+
+					<div class="content">
+						<h3><a href="single-post.html">Dicas para a vida</a></h3>
+						<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+							moon officia aute, non skateboard dolor brunch.</p>
+						<a class="btn btn-main" href="single-post.html">Leia mais</a>
+					</div>
+				</div>
+			</article>
+			<!-- end single blog post -->
+		</div> <!-- end row -->
+	</div> <!-- end container -->
+</section> <!-- end section -->
+
+
+
+<footer id="footer" class="bg-one">
+  <div class="top-footer">
+    <div class="container">
+      <div class="row justify-content-around">
+        <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+          <h3>Sobre</h3>
+          <p>Integer posuere erat a ante venenati dapibus posuere velit aliquet. Fusce dapibus, tellus cursus commodo, tortor mauris sed posuere.</p>
+        </div>
+        <!-- End of .col-sm-3 -->
+
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <ul>
+            <li>
+              <h3>Serviços</h3>
+            </li>
+            <li><a href="service.html">Ui/Ux Design</a></li>
+            <li><a href="service.html">Graphic Design</a></li>
+            <li><a href="service.html">Web Design</a></li>
+            <li><a href="service.html">Web Development</a></li>
+          </ul>
+        </div>
+        <!-- End of .col-sm-3 -->
+
+        <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
+          <ul>
+            <li>
+              <h3>Links uteis</h3>
+            </li>
+            <li><a href="https://abeps.org.br/">Abeps</a></li>
+            <li><a href="https://befrienders.org/foreign-language/members/portugese/">Befrienders</a></li>
+            <li><a href="https://sage.saude.gov.br/paineis/planoCrack/lista_caps.php?output=html&">Caps</a></li>
+            <li><a href="https://www.psymeetsocial.com/">PsyMeet</a></li>
+            <li><a href="https://www.setembroamarelo.org.br/">Setembro Aamarelo</a></li>
+            <li><a href="https://vitaalere.com.br/sobre-o-suicidio/posvencao/grupo-de-sobreviventes/">Vita Alere</a></li>
+            
+          </ul>
+        </div>
+        <!-- End of .col-sm-3 -->
+
+        <div class="col-lg-3 col-md-6">
+          <ul>
+            <li>
+              <h3>Contate nossas redes sociais</h3>
+            </li>
+            <li><a href="https://www.facebook.com/themefisher/">Facebook</a></li>
+            <li><a href="https://www.twitter.com/themefisher/">Twitter</a></li>
+            <li><a href="https://www.youtube.com/channel/UCx9qVW8VF0LmTi4OF2F8YdA">Youtube</a></li>
+            <li><a href="https://www.github.com/themefisher/">Github</a></li>
+          </ul>
+        </div>
+        <!-- End of .col-sm-3 -->
+
+      </div>
+    </div> <!-- end container -->
+  </div>
+  <div class="footer-bottom">
+    <h5>&copy; Copyright 2020. All rights reserved.</h5>
+    <h6>Design and Developed by <a href="https://themefisher.com/">Themefisher</a></h6>
+  </div>
+</footer> <!-- end footer -->
+
+
+<!-- end Footer Area
+========================================== -->
+
+<!-- 
+    Essential Scripts
+    =====================================-->
+<!-- Main jQuery -->
+<script src="forumapp/plugins/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap4 -->
+<script src="forumapp/plugins/bootstrap/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="forumapp/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="forumapp/plugins/lightbox2/js/lightbox.min.js"></script>
+<!-- Owl Carousel -->
+<script src="forumapp/plugins/slick/slick.min.js"></script>
+<!-- filter -->
+<script src="forumapp/plugins/filterizr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="forumapp/plugins/smooth-scroll/smooth-scroll.min.js"></script>
+<!-- Google Map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"></script>
+<script src="forumapp/plugins/google-map/gmap.js"></script>
+
+<!-- Custom js -->
+<script src="forumapp/js/script.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var blogLink = document.getElementById("blog-link");
+    var blogSection = document.getElementById("blog");
+
+    blogLink.addEventListener("click", function(event) {
+      event.preventDefault();
+      blogSection.scrollIntoView({ behavior: "smooth" });
+    });
+  });
+</script>
+
+</body>
+
+</html>
